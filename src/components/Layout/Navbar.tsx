@@ -38,7 +38,7 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className={`${show ? "flex flex-col h-full absolute z-50" : "hidden"} sm:block h-screen w-96 bg-[#6A1B9A] text-[#ffffff]`}>
+      <div className={`${show ? "flex flex-col h-full absolute z-50" : "hidden"} sm:block h-screen w-48 bg-[#6A1B9A] text-[#ffffff]`}>
         <div className="flex flex-col items-center py-5">
           <div className="w-24 rounded-full overflow-hidden">
             <img
@@ -49,15 +49,42 @@ const Navbar = () => {
           </div>
           <h3 className="font-bold">Phương Thảo</h3>
         </div>
-        <ul className="list-none">
-          <li className="bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2">
-            <NavLink to={"/about"}>ABOUT</NavLink>
+        <ul className="list-none w-full">
+          <li className="mb-2">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-[#FF6F00] text-[#ffffff] font-bold py-2 px-2 mb-2 w-full block"
+                  : "bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2 w-full block"
+              }
+            >
+              ABOUT
+            </NavLink>
           </li>
-          <li className="bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2">
-            <NavLink to={"/projects"}>PROJECTS</NavLink>
+          <li className="mb-2">
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-[#FF6F00] text-[#ffffff] font-bold py-2 px-2 mb-2 w-full block"
+                  : "bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2 w-full block"
+              }
+            >
+              PROJECTS
+            </NavLink>
           </li>
-          <li className="bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2">
-            <NavLink to={"/educations"}>EDUCATIONS</NavLink>
+          <li className="mb-2 w-full">
+            <NavLink
+              to="/educations"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-[#FF6F00] text-[#ffffff] font-bold py-2 px-2 mb-2  w-full block"
+                  : "bg-[#ffffff] text-[#6A1B9A] font-bold py-2 px-2 mb-2  w-full block"
+              }
+            >
+              EDUCATIONS
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -66,4 +93,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-// "hidden sm:block h-screen w-96 bg-[#6A1B9A] text-[#ffffff]"
